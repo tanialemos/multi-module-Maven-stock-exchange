@@ -10,10 +10,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>com.tanialemos.api</module>
-        <module>com.tanialemos.domain</module>
-        <module>com.tanialemos.interfaces</module>
-        <module>com.tanialemos.service</module>
+        <module>api</module>
+        <module>domain</module>
+        <module>interfaces</module>
+        <module>service</module>
     </modules>
 
     <dependencyManagement>
