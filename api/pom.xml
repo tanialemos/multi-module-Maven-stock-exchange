@@ -12,4 +12,11 @@
 
     <artifactId>api-module</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.tanialemos</groupId>
+            <artifactId>service-module</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

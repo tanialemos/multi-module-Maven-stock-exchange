@@ -12,4 +12,16 @@
 
     <artifactId>service-module</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.tanialemos</groupId>
+            <artifactId>domain-module</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tanialemos</groupId>
+            <artifactId>interfaces-module</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
