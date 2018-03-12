@@ -16,6 +16,7 @@
         <dependency>
             <groupId>com.tanialemos</groupId>
             <artifactId>service-module</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

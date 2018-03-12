@@ -16,12 +16,15 @@
         <dependency>
             <groupId>com.tanialemos</groupId>
             <artifactId>domain-module</artifactId>
+            <version>1.0</version>
         </dependency>
 
         <dependency>
             <groupId>com.tanialemos</groupId>
             <artifactId>interfaces-module</artifactId>
+            <version>1.0</version>
         </dependency>
+
     </dependencies>
 
 </project>
