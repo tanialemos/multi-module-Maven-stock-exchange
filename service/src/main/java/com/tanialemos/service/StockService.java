@@ -14,10 +14,14 @@ public class StockService implements ExternalStockInformationService {
     StockRepository stockRepository = new StockRepository();
 
     public Stock getStock(String stockId){
-        Map<String, Stock> connectionToFakeDB = stockRepository.getFakeDB();
-        Stock stock = connectionToFakeDB.get(stockId);
-        stock.setPrice(new StockPrice(getPriceInEuroForStock(stockId)));
-        return stock;
+        try {
+            Map<String, Stock> connectionToFakeDB = stockRepository.getFakeDB();
+            Stock stock = connectionToFakeDB.get(stockId);
+            stock.setPrice(new StockPrice(getPriceInEuroForStock(stockId)));
+            return stock;
+        } catch (Exception e){
+
+        }
     }
 
     public BigDecimal getPriceInEuroForStock(String stockId) {
