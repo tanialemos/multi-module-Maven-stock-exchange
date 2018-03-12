@@ -6,9 +6,12 @@ public class Stock {
     private String name;
     private StockPrice price;
 
-    public Stock(String id, String name, StockPrice price) {
+    public Stock(String id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public void setPrice(StockPrice price) {
         this.price = price;
     }
 
