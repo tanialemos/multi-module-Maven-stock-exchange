@@ -14,19 +14,23 @@ public class StockService implements ExternalStockInformationService {
     StockRepository stockRepository = new StockRepository();
 
     public Stock getStock(String stockId) throws IllegalArgumentException {
-            Map<String, Stock> connectionToFakeDB = stockRepository.getFakeDB();
-            if (connectionToFakeDB.get(stockId) != null) {
-                Stock stock = connectionToFakeDB.get(stockId);
-                stock.setPrice(new StockPrice(getPriceInEuroForStock(stockId)));
-                return stock;
-            }
-            else {
-                throw new IllegalArgumentException("The ID provided does not exists.");
-            }
-    }
+        Stock stock = connectToFakeDBAndGetStock(stockId);
+        stock.setPrice(new StockPrice(getPriceInEuroForStock(stockId)));
+        return stock;
+        }
 
     public BigDecimal getPriceInEuroForStock(String stockId) {
         double nbr = RandomUtils.nextDouble(10,100);
         return BigDecimal.valueOf(nbr);
+    }
+
+    public Stock connectToFakeDBAndGetStock(String stockId) throws IllegalArgumentException {
+        Map<String, Stock> connectionToFakeDB = stockRepository.getFakeDB();
+        if (connectionToFakeDB.get(stockId) != null) {
+            return connectionToFakeDB.get(stockId);
+        }
+        else {
+            throw new IllegalArgumentException("The provided ID does not exists.");
+        }
     }
 }
